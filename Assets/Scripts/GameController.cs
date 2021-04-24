@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
             SpawnRoad();
             SpawnAsteroid();
             SpawnRipple();
+            SpawnBoost();
         }
 
         // update time spent
@@ -69,31 +70,31 @@ public class GameController : MonoBehaviour
     private void SpawnAsteroid()
     {
         float randomNumber = Random.Range(1f, 10f);
-        if (randomNumber > 5)
+        if (randomNumber > 8)
         {
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newAsteroid;
             newAsteroid = Instantiate(asteroid) as GameObject;
-            newAsteroid.transform.position = new Vector3(randomPosition, 1.5f, roadSpawnPosition);
+            newAsteroid.transform.position = new Vector3(randomPosition, 1f, roadSpawnPosition);
         }
     }
 
     private void SpawnBoost()
     {
         float randomNumber = Random.Range(1f, 10f);
-        if (randomNumber > 3f && randomNumber < 3.4f)
+        Debug.Log(randomNumber);
+        if (randomNumber > 3f && randomNumber < 3.2f)
         {
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newBoost;
             newBoost = Instantiate(boost) as GameObject;
-            newBoost.transform.position = new Vector3(randomPosition, 0.7f, roadSpawnPosition);
+            newBoost.transform.position = new Vector3(randomPosition, 1f, roadSpawnPosition);
         }
     }
 
     private void SpawnRipple()
     {
         float randomNumber = Random.Range(1f, 10f);
-        Debug.Log(randomNumber);
         if (randomNumber < 1.1f)
         {
             GameObject newRipple;

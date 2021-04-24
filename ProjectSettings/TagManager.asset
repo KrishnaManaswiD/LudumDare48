@@ -6,6 +6,7 @@ TagManager:
   tags:
   - asteroid
   - boost
+  - ripple
   layers:
   - Default
   - TransparentFX

@@ -31,7 +31,7 @@ public class surferController : MonoBehaviour
             horizontalVelocity = -7.0f;
             verticalVelocity = currentLaneNumber > 3 ? -0.2f : 0.2f;
             angularVelocityAboutForward = -1.0f;
-            StartCoroutine(stopSliding());
+            StartCoroutine(StopSliding());
             currentLaneNumber -= 1;
             movementLock = "y";
         }
@@ -41,28 +41,10 @@ public class surferController : MonoBehaviour
             horizontalVelocity = 7.0f;
             verticalVelocity = currentLaneNumber < 3 ? -0.2f : 0.2f;
             angularVelocityAboutForward = 1.0f;
-            StartCoroutine(stopSliding());
+            StartCoroutine(StopSliding());
             currentLaneNumber += 1;
             movementLock = "y";
         }
-    }
-
-    // stops player movement after a certain amount of time
-    IEnumerator stopSliding()
-    {
-        yield return new WaitForSeconds(0.2f);
-        horizontalVelocity = 0.0f;
-        verticalVelocity = 0.0f;
-        angularVelocityAboutForward = 0;
-        movementLock = "n";
-    }
-
-    // stops boost in forward velocity
-    IEnumerator stopBoost()
-    {
-        yield return new WaitForSeconds(1.5f);
-        GameController.forwardVelocityBooster = 1.0f;
-        GameController.boostMode = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,7 +58,39 @@ public class surferController : MonoBehaviour
         {
             GameController.forwardVelocityBooster = 2.0f;
             GameController.boostMode = true;
-            StartCoroutine(stopBoost());
+            StartCoroutine(StopBoost());
+        }
+
+        if (other.gameObject.tag == "ripple")
+        {
+            GameController.forwardVelocityBooster = 0.5f;
+            StartCoroutine(StopSlowdown());
         }
     }
+
+    // stops player movement after a certain amount of time
+    IEnumerator StopSliding()
+    {
+        yield return new WaitForSeconds(0.2f);
+        horizontalVelocity = 0.0f;
+        verticalVelocity = 0.0f;
+        angularVelocityAboutForward = 0;
+        movementLock = "n";
+    }
+
+    // stops boost in forward velocity
+    IEnumerator StopBoost()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GameController.forwardVelocityBooster = 1.0f;
+        GameController.boostMode = false;
+    }
+
+    IEnumerator StopSlowdown()
+    {
+        yield return new WaitForSeconds(1.0f);
+        GameController.forwardVelocityBooster = 1.0f;
+    }
+
+
 }
