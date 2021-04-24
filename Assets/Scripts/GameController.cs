@@ -13,9 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject road;
     private float roadSpawnPosition = 0;
 
+    public GameObject ripple;
     public GameObject asteroid;
-    private float asteroidPosition = 0.0f;
-
     public GameObject boost;
 
     public GameObject player;
@@ -36,10 +35,10 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < numberOfRoadPiecesInfrontOfPlayer; i++)
         {
             SpawnRoad();
-            SpawnAsteroid();
+            //SpawnAsteroid();
+            //SpawnRipple();
+            //SpawnBoost();
         }
-
-        SpawnBoost();
         
     }
 
@@ -50,9 +49,9 @@ public class GameController : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (playerTransform.position.z > (roadSpawnPosition - numberOfRoadPiecesInfrontOfPlayer * 1))
         {
-            Debug.Log("need road");
             SpawnRoad();
             SpawnAsteroid();
+            SpawnRipple();
         }
 
         // update time spent
@@ -69,20 +68,38 @@ public class GameController : MonoBehaviour
 
     private void SpawnAsteroid()
     {
-        asteroidPosition = Random.Range(-5, 5);
-        // create asteroids
-        if (Mathf.Abs(asteroidPosition % 2.0f) < 0.5)
+        float randomNumber = Random.Range(1f, 10f);
+        if (randomNumber > 5)
         {
+            float randomPosition = Random.Range(-5f, 5f);
             GameObject newAsteroid;
             newAsteroid = Instantiate(asteroid) as GameObject;
-            newAsteroid.transform.position = new Vector3(asteroidPosition, 1.5f, roadSpawnPosition);
+            newAsteroid.transform.position = new Vector3(randomPosition, 1.5f, roadSpawnPosition);
         }
     }
 
     private void SpawnBoost()
     {
-        GameObject newBoost;
-        newBoost = Instantiate(boost) as GameObject;
-        newBoost.transform.position = new Vector3(0, 0.7f, 20.0f);
+        float randomNumber = Random.Range(1f, 10f);
+        if (randomNumber > 3f && randomNumber < 3.4f)
+        {
+            float randomPosition = Random.Range(-5f, 5f);
+            GameObject newBoost;
+            newBoost = Instantiate(boost) as GameObject;
+            newBoost.transform.position = new Vector3(randomPosition, 0.7f, roadSpawnPosition);
+        }
+    }
+
+    private void SpawnRipple()
+    {
+        float randomNumber = Random.Range(1f, 10f);
+        Debug.Log(randomNumber);
+        if (randomNumber < 1.1f)
+        {
+            GameObject newRipple;
+            newRipple = Instantiate(ripple) as GameObject;
+            newRipple.transform.position = new Vector3(0, 1, roadSpawnPosition);
+        }
+        
     }
 }
