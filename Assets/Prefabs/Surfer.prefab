@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93515239a29907243b316c954db202e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardVelocity: 4
+  forwardVelocity: 20
   horizontalVelocity: 0
   verticalVelocity: 0
   angularVelocityAboutForward: 0

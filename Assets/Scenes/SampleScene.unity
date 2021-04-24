@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   road: {fileID: 6512046349045960842, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
-  asteroid: {fileID: 4015915869256647215, guid: 8cbfca4b5bca3f24ba3f7ae1c54c5d41, type: 3}
-  boost: {fileID: 2179011448982260876, guid: f94aa01729584c64fa695a5099249a27, type: 3}
-  player: {fileID: 1437505116911153654, guid: 74509091fa599794e94bb95bdbe5f176, type: 3}
+  asteroid: {fileID: 1127069329799536057, guid: 8cbfca4b5bca3f24ba3f7ae1c54c5d41, type: 3}
+  boost: {fileID: 2179011448982260976, guid: f94aa01729584c64fa695a5099249a27, type: 3}
+  player: {fileID: 1437505116911153661, guid: 74509091fa599794e94bb95bdbe5f176, type: 3}
 --- !u!4 &59347350
 Transform:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751aeb23c2b8d9842aadbe69b057b04e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardVelocity: 4
+  forwardVelocity: 20
 --- !u!54 &963194230
 Rigidbody:
   m_ObjectHideFlags: 0

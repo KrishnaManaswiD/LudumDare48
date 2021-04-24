@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class surferController : MonoBehaviour
 {
-    public float forwardVelocity = 4.0f;
+    public float forwardVelocity = 20.0f;
     public float horizontalVelocity = 0.0f;
     public float verticalVelocity = 0.0f;
     public float angularVelocityAboutForward = 0.0f;
@@ -30,7 +30,7 @@ public class surferController : MonoBehaviour
         {
             horizontalVelocity = -7.0f;
             verticalVelocity = currentLaneNumber > 3 ? -0.2f : 0.2f;
-            angularVelocityAboutForward = -0.5f;
+            angularVelocityAboutForward = -1.0f;
             StartCoroutine(stopSliding());
             currentLaneNumber -= 1;
             movementLock = "y";
@@ -40,7 +40,7 @@ public class surferController : MonoBehaviour
         {
             horizontalVelocity = 7.0f;
             verticalVelocity = currentLaneNumber < 3 ? -0.2f : 0.2f;
-            angularVelocityAboutForward = 0.5f;
+            angularVelocityAboutForward = 1.0f;
             StartCoroutine(stopSliding());
             currentLaneNumber += 1;
             movementLock = "y";

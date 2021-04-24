@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
-    public float forwardVelocity = 4;
+    public float forwardVelocity = 20.0f;
 
     // Start is called before the first frame update
     void Start()
