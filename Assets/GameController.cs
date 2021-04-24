@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    // variables accessible by all scripts
+    public static float forwardVelocityBooster = 1;
+
+
+    // variables specific to this script
     public Transform road;
     private float roadSpawnPosition = 0;
 
     public Transform asteroid;
     private float asteroidPosition = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()

@@ -23,7 +23,7 @@ public class surferController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontalVelocity, verticalVelocity, forwardVelocity);
+        GetComponent<Rigidbody>().velocity = new Vector3(horizontalVelocity, verticalVelocity, forwardVelocity * GameController.forwardVelocityBooster);
         GetComponent<Rigidbody>().angularVelocity = new Vector3(0, angularVelocityAboutVertical, angularVelocityAboutForward);
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLaneNumber > 1 && movementLock == "n")
@@ -57,11 +57,24 @@ public class surferController : MonoBehaviour
         movementLock = "n";
     }
 
+    // stops boost in forward velocity
+    IEnumerator stopBoost()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GameController.forwardVelocityBooster = 1.0f;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "asteroid")
         {
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "boost")
+        {
+            GameController.forwardVelocityBooster = 2.0f;
+            StartCoroutine(stopBoost());
         }
     }
 }
