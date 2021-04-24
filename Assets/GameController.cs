@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
     // variables accessible by all scripts
     public static float forwardVelocityBooster = 1;
 
-
     // variables specific to this script
     public Transform road;
     private float roadSpawnPosition = 0;
@@ -15,12 +14,14 @@ public class GameController : MonoBehaviour
     public Transform asteroid;
     private float asteroidPosition = 0.0f;
 
+    public Transform boost;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
 
+        Instantiate(boost, new Vector3(0, 0.7f, 10.0f), boost.rotation);
         
     }
 
