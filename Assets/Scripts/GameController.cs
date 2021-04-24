@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // create player
+        // spawn player
         Instantiate(player, playerStartingPosition, player.rotation);
 
 
