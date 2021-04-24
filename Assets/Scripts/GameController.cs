@@ -48,7 +48,6 @@ public class GameController : MonoBehaviour
     {
         // create road
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        Debug.Log(playerTransform.position.z);
         if (playerTransform.position.z > (roadSpawnPosition - numberOfRoadPiecesInfrontOfPlayer * 1))
         {
             Debug.Log("need road");

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class surferController : MonoBehaviour
 {
-    public float forwardVelocity = 20.0f;
-    public float horizontalVelocity = 0.0f;
-    public float verticalVelocity = 0.0f;
-    public float angularVelocityAboutForward = 0.0f;
-    public float angularVelocityAboutVertical = 0.0f;
-    
-    public int  currentLaneNumber = 3; // 1, 2, 3, 4, 5
+    private float forwardVelocity = 20.0f;
+    private float horizontalVelocity = 0.0f;
+    private float verticalVelocity = 0.0f;
+    private float angularVelocityAboutForward = 0.0f;
+    private float angularVelocityAboutVertical = 0.0f;
 
-    public string movementLock = "n";
+    private int  currentLaneNumber = 3; // 1, 2, 3, 4, 5
+
+    private string movementLock = "n";
 
     // Start is called before the first frame update
     void Start()
