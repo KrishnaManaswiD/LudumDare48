@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
     // variables accessible by all scripts
     public static float forwardVelocityBooster = 1;
+    public static float timeSpent = 0.0f;
+
 
     // variables specific to this script
     public Transform road;
@@ -45,6 +47,7 @@ public class GameController : MonoBehaviour
             roadSpawnPosition += 2;
         }
 
-
+        // update time spent
+        timeSpent += Time.deltaTime;
     }
 }
