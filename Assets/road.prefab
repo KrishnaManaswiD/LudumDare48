@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7402621047372826005}
   - component: {fileID: 4710646285897314655}
   m_Layer: 0
-  m_Name: road_mid
+  m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5842504668046150192
 Transform:
@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: road_l1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa9646302e9e27941b43dd9c09aeec50, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa9646302e9e27941b43dd9c09aeec50, type: 3}
 --- !u!4 &2573994546939498854 stripped
@@ -201,6 +205,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cb7b75869dbcb8942a10997c0245b0fc, type: 3}
       propertyPath: m_Name
       value: road_r2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb7b75869dbcb8942a10997c0245b0fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7b75869dbcb8942a10997c0245b0fc, type: 3}
@@ -264,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: road_r1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70f8e061769f3b34c9b120ebcfe7ca45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70f8e061769f3b34c9b120ebcfe7ca45, type: 3}
 --- !u!4 &3272236248496398773 stripped
@@ -325,6 +337,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cf05cc962ac5c594cb274bc10c141b18, type: 3}
       propertyPath: m_Name
       value: road_l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf05cc962ac5c594cb274bc10c141b18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf05cc962ac5c594cb274bc10c141b18, type: 3}
