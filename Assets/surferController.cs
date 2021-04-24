@@ -56,4 +56,13 @@ public class surferController : MonoBehaviour
         angularVelocityAboutForward = 0;
         movementLock = "n";
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "asteroid")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("collided with asteroid");
+        }
+    }
 }

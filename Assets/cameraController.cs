@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
+    public float forwardVelocity = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class cameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 4);
+        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, forwardVelocity);
     }
 }
