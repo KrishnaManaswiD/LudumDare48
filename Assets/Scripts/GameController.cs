@@ -50,9 +50,10 @@ public class GameController : MonoBehaviour
         if (playerTransform.position.z > (roadSpawnPosition - numberOfRoadPiecesInfrontOfPlayer * 1))
         {
             SpawnRoad();
-            SpawnAsteroid();
-            SpawnRipple();
-            SpawnBoost();
+            float randomNumber = Random.Range(1f, 10f);
+            SpawnAsteroid(randomNumber);
+            SpawnRipple(randomNumber);
+            SpawnBoost(randomNumber);
         }
 
         // update time spent
@@ -67,10 +68,9 @@ public class GameController : MonoBehaviour
         roadSpawnPosition += 2;
     }
 
-    private void SpawnAsteroid()
+    private void SpawnAsteroid(float randomNum)
     {
-        float randomNumber = Random.Range(1f, 10f);
-        if (randomNumber > 8)
+        if (randomNum > 8)
         {
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newAsteroid;
@@ -79,11 +79,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void SpawnBoost()
-    {
-        float randomNumber = Random.Range(1f, 10f);
-        Debug.Log(randomNumber);
-        if (randomNumber > 3f && randomNumber < 3.2f)
+    private void SpawnBoost(float randomNum)
+    { 
+        if (randomNum > 3f && randomNum < 3.2f)
         {
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newBoost;
@@ -92,10 +90,10 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void SpawnRipple()
+    private void SpawnRipple(float randomNum)
     {
-        float randomNumber = Random.Range(1f, 10f);
-        if (randomNumber < 1.1f)
+
+        if (randomNum < 1.01f)
         {
             GameObject newRipple;
             newRipple = Instantiate(ripple) as GameObject;
