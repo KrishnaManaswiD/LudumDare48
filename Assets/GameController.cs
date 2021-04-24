@@ -18,10 +18,16 @@ public class GameController : MonoBehaviour
 
     public Transform boost;
 
+    public Transform player;
+    private Vector3 playerStartingPosition = new Vector3(0, 1.01f, 0);
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // create player
+        Instantiate(player, playerStartingPosition, player.rotation);
+
 
         Instantiate(boost, new Vector3(0, 0.7f, 10.0f), boost.rotation);
         
