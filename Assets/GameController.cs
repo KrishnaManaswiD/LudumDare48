@@ -8,14 +8,14 @@ public class GameController : MonoBehaviour
     private float roadSpawnPosition = 0;
 
     public Transform asteroid;
+    private float asteroidPosition = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         
 
-        // create asteroids
-        Instantiate(asteroid, new Vector3(1.0f, 1.5f, 10.0f), asteroid.rotation);
+        
     }
 
     // Update is called once per frame
@@ -24,7 +24,17 @@ public class GameController : MonoBehaviour
         // create road
         if (roadSpawnPosition < 50)
         {
+            // create road
             Instantiate(road, new Vector3(0, 0, roadSpawnPosition), road.rotation);
+
+            asteroidPosition = Random.Range(-5, 5);
+            // create asteroids
+            if (Mathf.Abs(asteroidPosition % 2.0f) < 0.5 )
+            {
+                Instantiate(asteroid, new Vector3(asteroidPosition, 1.5f, roadSpawnPosition), asteroid.rotation);
+            }
+            
+
             roadSpawnPosition += 2;
         }
 
