@@ -62,6 +62,7 @@ public class surferController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         GameController.forwardVelocityBooster = 1.0f;
+        GameController.boostMode = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,6 +75,7 @@ public class surferController : MonoBehaviour
         if (other.gameObject.tag == "boost")
         {
             GameController.forwardVelocityBooster = 2.0f;
+            GameController.boostMode = true;
             StartCoroutine(stopBoost());
         }
     }

@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     // variables accessible by all scripts
     public static float forwardVelocityBooster = 1;
     public static float timeSpent = 0.0f;
-
+    public static bool boostMode = false;
 
     // variables specific to this script
     public GameObject road;
@@ -83,6 +83,6 @@ public class GameController : MonoBehaviour
     {
         GameObject newBoost;
         newBoost = Instantiate(boost) as GameObject;
-        newBoost.transform.position = new Vector3(0, 0.7f, 10.0f);
+        newBoost.transform.position = new Vector3(0, 0.7f, 20.0f);
     }
 }
