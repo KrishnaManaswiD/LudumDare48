@@ -57,7 +57,7 @@ public class surferController : MonoBehaviour
         movementLock = "n";
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "asteroid")
         {
