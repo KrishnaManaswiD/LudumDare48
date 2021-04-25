@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 
     public GameObject ripple;
     public GameObject asteroid;
+    public GameObject[] asteroidsList = new GameObject[4];
     public GameObject boost;
 
     public GameObject player;
@@ -76,8 +77,9 @@ public class GameController : MonoBehaviour
         if (randomNum > 8)
         {
             float randomPosition = Random.Range(-5f, 5f);
+            int randomAsteroid = Random.Range(0, 3);
             GameObject newAsteroid;
-            newAsteroid = Instantiate(asteroid) as GameObject;
+            newAsteroid = Instantiate(asteroidsList[randomAsteroid]) as GameObject;
             newAsteroid.transform.position = new Vector3(randomPosition, 1f, roadSpawnPosition);
         }
     }
