@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     private Transform playerTransform;
     private Vector3 playerStartingPosition = new Vector3(0, 1.01f, 0);
 
+    public GameObject blackhole;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,11 @@ public class GameController : MonoBehaviour
         {
             SpawnRoad();
         }
+
+        // spawn blackhole
+        Instantiate(blackhole);
+        Debug.Log(roadSpawnPosition);
+        blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition);
     }
 
     // Update is called once per frame
@@ -58,6 +65,9 @@ public class GameController : MonoBehaviour
             SpawnRipple(randomNumber);
             SpawnBoost(randomNumber);
         }
+
+        // update position of blackhole
+        
 
         // update time spent
         timeSpent += Time.deltaTime;
