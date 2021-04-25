@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     // variables specific to this script
     public GameObject road;
     private float roadSpawnPosition = 0;
+    private readonly float roadPieceDepth = 2.0f;
+    private readonly int numberOfRoadPiecesInfrontOfPlayer = 25;
 
     public GameObject ripple;
     public GameObject asteroid;
@@ -23,9 +25,6 @@ public class GameController : MonoBehaviour
     public GameObject player;
     private Transform playerTransform;
     private Vector3 playerStartingPosition = new Vector3(0, 1.01f, 0);
-
-    private int numberOfRoadPiecesInfrontOfPlayer = 25;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +38,6 @@ public class GameController : MonoBehaviour
         {
             SpawnRoad();
         }
-        
     }
 
     // Update is called once per frame
@@ -70,7 +68,7 @@ public class GameController : MonoBehaviour
         GameObject newRoad;
         newRoad = Instantiate(road) as GameObject;
         newRoad.transform.position = new Vector3(0, 0, roadSpawnPosition);
-        roadSpawnPosition += 2;
+        roadSpawnPosition += roadPieceDepth;
     }
 
     private void SpawnAsteroid(float randomNum)
