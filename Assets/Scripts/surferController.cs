@@ -57,6 +57,7 @@ public class surferController : MonoBehaviour
 
         if (other.gameObject.tag == "boost")
         {
+            Destroy(other.gameObject);
             GameController.forwardVelocityBooster = 2.0f;
             GameController.boostMode = true;
             StartCoroutine(StopBoost());
