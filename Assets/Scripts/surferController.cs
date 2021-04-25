@@ -18,6 +18,8 @@ public class surferController : MonoBehaviour
     private bool movementLock = false;
     private bool jumpLock = false;
 
+    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +51,18 @@ public class surferController : MonoBehaviour
             currentLaneNumber += 1;
             movementLock = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && jumpLock == false)
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpLock == false)
         {
             jumpLock = true;
             StartCoroutine(LandBack());
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FireBullet();
+        }
+
 
         if (jumpLock == true)
         {
@@ -135,6 +144,12 @@ public class surferController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         jumpLock = false;
+    }
+
+    private void FireBullet()
+    {
+        Vector3 bulletPosition = transform.position + new Vector3(0, 0, 1.0f);
+        Instantiate(bullet, bulletPosition, bullet.transform.rotation);
     }
 
 }

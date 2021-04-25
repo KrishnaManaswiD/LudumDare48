@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93515239a29907243b316c954db202e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 3222759385037895309, guid: f0a96667fc431f6449b90139ef3fb986, type: 3}
 --- !u!54 &1437505116911153655
 Rigidbody:
   m_ObjectHideFlags: 0
