@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4fa967c9bf81cf45a87c5cad0c6fe90, type: 2}
+  - {fileID: 2100000, guid: 6cd88bed52563fb438cef8c07b7de0cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: aa9646302e9e27941b43dd9c09aeec50, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4fa967c9bf81cf45a87c5cad0c6fe90, type: 2}
+      objectReference: {fileID: 2100000, guid: 6cd88bed52563fb438cef8c07b7de0cf, type: 2}
     - target: {fileID: 919132149155446097, guid: aa9646302e9e27941b43dd9c09aeec50, type: 3}
       propertyPath: m_Name
       value: road_l1
@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cb7b75869dbcb8942a10997c0245b0fc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4fa967c9bf81cf45a87c5cad0c6fe90, type: 2}
+      objectReference: {fileID: 2100000, guid: 6cd88bed52563fb438cef8c07b7de0cf, type: 2}
     - target: {fileID: 919132149155446097, guid: cb7b75869dbcb8942a10997c0245b0fc, type: 3}
       propertyPath: m_Name
       value: road_r2
@@ -292,7 +292,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 70f8e061769f3b34c9b120ebcfe7ca45, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4fa967c9bf81cf45a87c5cad0c6fe90, type: 2}
+      objectReference: {fileID: 2100000, guid: 6cd88bed52563fb438cef8c07b7de0cf, type: 2}
     - target: {fileID: 919132149155446097, guid: 70f8e061769f3b34c9b120ebcfe7ca45, type: 3}
       propertyPath: m_Name
       value: road_r1
@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cf05cc962ac5c594cb274bc10c141b18, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4fa967c9bf81cf45a87c5cad0c6fe90, type: 2}
+      objectReference: {fileID: 2100000, guid: 6cd88bed52563fb438cef8c07b7de0cf, type: 2}
     - target: {fileID: 919132149155446097, guid: cf05cc962ac5c594cb274bc10c141b18, type: 3}
       propertyPath: m_Name
       value: road_l2
