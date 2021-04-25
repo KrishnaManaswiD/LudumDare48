@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
     {
         // create road
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        if (playerTransform.position.z > (roadSpawnPosition - numberOfRoadPiecesInfrontOfPlayer * 1))
+        if (playerTransform.position.z > (roadSpawnPosition - numberOfRoadPiecesInfrontOfPlayer * roadPieceDepth))
         {
             SpawnRoad();
             float randomNumber = Random.Range(1f, 10f);
