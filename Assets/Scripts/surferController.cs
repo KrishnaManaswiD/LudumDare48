@@ -10,9 +10,13 @@ public class surferController : MonoBehaviour
     private float angularVelocityAboutForward = 0.0f;
     private float angularVelocityAboutVertical = 0.0f;
 
+    private float initialJumpVelocity = 2.0f;
+    private float timeSinceJump = 0.0f;
+
     private int  currentLaneNumber = 3; // 1, 2, 3, 4, 5
 
-    private string movementLock = "n";
+    private bool movementLock = false;
+    private bool jumpLock = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +30,57 @@ public class surferController : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(horizontalVelocity, verticalVelocity, forwardVelocity * GameController.forwardVelocityBooster);
         GetComponent<Rigidbody>().angularVelocity = new Vector3(0, angularVelocityAboutVertical, angularVelocityAboutForward);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLaneNumber > 1 && movementLock == "n")
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLaneNumber > 1 && movementLock == false)
         {
             horizontalVelocity = -7.0f;
             verticalVelocity = currentLaneNumber > 3 ? -0.2f : 0.2f;
             angularVelocityAboutForward = -1.0f;
             StartCoroutine(StopSliding());
             currentLaneNumber -= 1;
-            movementLock = "y";
+            movementLock = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLaneNumber < 5 && movementLock == "n")
+        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLaneNumber < 5 && movementLock == false)
         {
             horizontalVelocity = 7.0f;
             verticalVelocity = currentLaneNumber < 3 ? -0.2f : 0.2f;
             angularVelocityAboutForward = 1.0f;
             StartCoroutine(StopSliding());
             currentLaneNumber += 1;
-            movementLock = "y";
+            movementLock = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && jumpLock == false)
+        {
+            jumpLock = true;
+            StartCoroutine(LandBack());
+        }
+
+        if (jumpLock == true)
+        {
+            timeSinceJump += Time.deltaTime;
+            Debug.Log(timeSinceJump);
+
+            if (timeSinceJump <= 0.5f)
+            {
+                verticalVelocity = initialJumpVelocity - (4 * timeSinceJump);
+            }
+            else if (timeSinceJump > 0.5f && timeSinceJump < 0.9f)
+            {
+                verticalVelocity = -(float)(4 * (timeSinceJump - 0.5));
+            }
+            else
+            {
+                verticalVelocity = 0.0f;
+                timeSinceJump = 0.0f;
+                Vector3 currentPosition = GetComponent<Rigidbody>().position;
+                if (currentLaneNumber == 3)
+                    transform.position = new Vector3(currentPosition.x, 1.01f, currentPosition.z);
+                else if (currentLaneNumber == 2 || currentLaneNumber == 4)
+                    transform.position = new Vector3(currentPosition.x, 1.05f, currentPosition.z);
+                else
+                    transform.position = new Vector3(currentPosition.x, 1.09f, currentPosition.z);
+                jumpLock = false;
+            }
         }
     }
 
@@ -77,7 +114,7 @@ public class surferController : MonoBehaviour
         horizontalVelocity = 0.0f;
         verticalVelocity = 0.0f;
         angularVelocityAboutForward = 0;
-        movementLock = "n";
+        movementLock = false;
     }
 
     // stops boost in forward velocity
@@ -94,5 +131,10 @@ public class surferController : MonoBehaviour
         GameController.forwardVelocityBooster = 1.0f;
     }
 
+    IEnumerator LandBack()
+    {
+        yield return new WaitForSeconds(1.0f);
+        jumpLock = false;
+    }
 
 }
