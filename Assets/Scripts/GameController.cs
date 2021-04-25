@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public static float timeSpent = 0.0f;
     public static bool boostMode = false;
 
+    public static float playerHealth = 100f;
+    public static bool isGameOver = false;
+
     // variables specific to this script
     public GameObject road;
     private float roadSpawnPosition = 0;
@@ -35,9 +38,6 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < numberOfRoadPiecesInfrontOfPlayer; i++)
         {
             SpawnRoad();
-            //SpawnAsteroid();
-            //SpawnRipple();
-            //SpawnBoost();
         }
         
     }
@@ -58,6 +58,11 @@ public class GameController : MonoBehaviour
 
         // update time spent
         timeSpent += Time.deltaTime;
+
+        if (playerHealth <= 0f)
+        {
+            isGameOver = true;
+        }
     }
 
     private void SpawnRoad()

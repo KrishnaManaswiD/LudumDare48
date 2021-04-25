@@ -52,6 +52,7 @@ public class surferController : MonoBehaviour
         if (other.gameObject.tag == "asteroid")
         {
             Destroy(other.gameObject);
+            GameController.playerHealth -= 20;
         }
 
         if (other.gameObject.tag == "boost")
