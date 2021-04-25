@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: water
-  m_Shader: {fileID: -6465566751694194690, guid: 9db4ac0c8af411d45b0b99bafa02f95d, type: 3}
+  m_Name: bulletMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 5f3d0af13ad8942429e6f9a5e0c1bb78, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,11 +76,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_0d1fecefc9c940c3938966f48e524d2c: 0.3
-    - Vector1_496de4f44e9d418c97514ae6ffa25f68: 0.2
-    - Vector1_5b6e3c51ee234b7d8278bb0d03fb3a69: 20
-    - Vector1_b1cf6f645e87404e9a4d758fb2f2ac76: 0.1
-    - Vector1_e07b364404df4ea180e3bca3e469f15f: 4
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -108,14 +103,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_165a05f80582492ebf48da285c40ea97: {r: 0.063930646, g: 0.12056484, b: 0.2765979, a: 0.50980395}
-    - Color_d38a9b81bb7041678e513d23087c3925: {r: 0, g: 0, b: 0, a: 0.2901961}
+    - Color_d2c964d02f32411db85f4766234366ef: {r: 1.9450982, g: 0.101837575, b: 1.11813, a: 0}
+    - Color_fb93392c8bc54e159069b60022b088c8: {r: 0.6698113, g: 0.16745283, b: 0.60685647, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4064132755283490634
+--- !u!114 &4067770689799783961
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
