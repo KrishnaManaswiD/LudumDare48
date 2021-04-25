@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = 100;
+        isGameOver = false;
+
         // spawn player
         Instantiate(player);
         player.transform.position = playerStartingPosition;
@@ -61,6 +65,11 @@ public class GameController : MonoBehaviour
         if (playerHealth <= 0f)
         {
             isGameOver = true;
+        }
+
+        if (isGameOver)
+        {
+            HandleGameOver();
         }
     }
 
@@ -105,5 +114,10 @@ public class GameController : MonoBehaviour
             newRipple.transform.position = new Vector3(0, 1, roadSpawnPosition);
         }
         
+    }
+
+    private void HandleGameOver()
+    {
+        SceneManager.LoadSceneAsync("GameOver");
     }
 }
