@@ -162,6 +162,7 @@ MonoBehaviour:
   - {fileID: 4389580289974028064, guid: 7dbaf906d3ee4e0449c38c56dececd31, type: 3}
   boost: {fileID: 2179011448982260976, guid: f94aa01729584c64fa695a5099249a27, type: 3}
   player: {fileID: 1437505116911153661, guid: 74509091fa599794e94bb95bdbe5f176, type: 3}
+  blackhole: {fileID: 306552983153418772, guid: 6a3e9b1f284a579429999719aae06a79, type: 3}
 --- !u!4 &59347350
 Transform:
   m_ObjectHideFlags: 0
@@ -422,6 +423,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3542758853723716867, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 759972a170531fe4e86f415ef6a18012, type: 2}
+    - target: {fileID: 3743483855340890633, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 759972a170531fe4e86f415ef6a18012, type: 2}
+    - target: {fileID: 4405221216405101274, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 759972a170531fe4e86f415ef6a18012, type: 2}
+    - target: {fileID: 4710646285897314655, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 759972a170531fe4e86f415ef6a18012, type: 2}
+    - target: {fileID: 5635179209566531897, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 759972a170531fe4e86f415ef6a18012, type: 2}
     - target: {fileID: 5842504668046150192, guid: f83cc987935f2c249bbda57b5ecc22db, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -35,9 +35,10 @@ public class GameController : MonoBehaviour
     {
         playerHealth = 100;
         isGameOver = false;
+        roadSpawnPosition = 0;
 
         // spawn player
-        Instantiate(player);
+        player = Instantiate(player); // not good code. 
         player.transform.position = playerStartingPosition;
 
         // create initial road
@@ -47,9 +48,10 @@ public class GameController : MonoBehaviour
         }
 
         // spawn blackhole
-        Instantiate(blackhole);
-        Debug.Log(roadSpawnPosition);
-        blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition);
+        blackhole = Instantiate(blackhole); // not good code
+        //blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition);
+        blackhole.transform.position = player.transform.position + new Vector3(0,0,100f);
+
     }
 
     // Update is called once per frame
@@ -64,10 +66,8 @@ public class GameController : MonoBehaviour
             SpawnAsteroid(randomNumber);
             SpawnRipple(randomNumber);
             SpawnBoost(randomNumber);
+            blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition + 50);
         }
-
-        // update position of blackhole
-        
 
         // update time spent
         timeSpent += Time.deltaTime;
