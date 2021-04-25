@@ -21,7 +21,7 @@ public class cameraController : MonoBehaviour
 
         if(GameController.boostMode)
         {
-            horizontalVelocity = Random.Range(-1f, 1f);
+            horizontalVelocity = Random.Range(-1f, 1f) * 5;
             if (timeElapsed < 1.3f)
             {
                 forwardVelocity = 18.0f;
@@ -37,7 +37,9 @@ public class cameraController : MonoBehaviour
             timeElapsed = 0f;
             forwardVelocity = 20.0f;
             horizontalVelocity = 0.0f;
-            // camera doesnt exactly come back to same x
+            // camera doesnt exactly come back to same x, so we manually fix it
+            Vector3 currentPosition = GetComponent<Rigidbody>().position;
+            transform.position = new Vector3(0, currentPosition.y, currentPosition.z);
         }
 
     }
