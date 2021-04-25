@@ -8,6 +8,8 @@ public class cameraController : MonoBehaviour
     private float horizontalVelocity = 0.0f;
     private float timeElapsed = 0f;
 
+    private float boostWobbleFactor = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class cameraController : MonoBehaviour
 
         if(GameController.boostMode)
         {
-            horizontalVelocity = Random.Range(-1f, 1f) * 5;
+            horizontalVelocity = Random.Range(-1f, 1f) * boostWobbleFactor;
             if (timeElapsed < 1.3f)
             {
                 forwardVelocity = 18.0f;
