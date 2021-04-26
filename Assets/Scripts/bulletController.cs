@@ -7,6 +7,8 @@ public class bulletController : MonoBehaviour
     public float forwardVelocity = 50.0f;
     private Vector3 spawnPosition;
 
+    public AudioSource asteroidCollisionSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class bulletController : MonoBehaviour
     {
         if (other.gameObject.tag == "asteroid")
         {
+            asteroidCollisionSound.Play();
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

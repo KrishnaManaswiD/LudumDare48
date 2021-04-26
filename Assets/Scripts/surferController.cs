@@ -10,7 +10,7 @@ public class surferController : MonoBehaviour
     private float angularVelocityAboutForward = 0.0f;
     private float angularVelocityAboutVertical = 0.0f;
 
-    private float initialJumpVelocity = 2.0f;
+    private float initialJumpVelocity = 5.0f;
     private float timeSinceJump = 0.0f;
 
     private int  currentLaneNumber = 3; // 1, 2, 3, 4, 5
@@ -19,6 +19,11 @@ public class surferController : MonoBehaviour
     private bool jumpLock = false;
 
     public GameObject bullet;
+
+    public AudioSource asteroidDestroySound;
+    public AudioSource jumpSound;
+    public AudioSource groundRumbleSound;
+    public AudioSource boostSound;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,7 @@ public class surferController : MonoBehaviour
         {
             jumpLock = true;
             StartCoroutine(LandBack());
+            jumpSound.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -67,15 +73,14 @@ public class surferController : MonoBehaviour
         if (jumpLock == true)
         {
             timeSinceJump += Time.deltaTime;
-            Debug.Log(timeSinceJump);
 
             if (timeSinceJump <= 0.5f)
             {
-                verticalVelocity = initialJumpVelocity - (4 * timeSinceJump);
+                verticalVelocity = initialJumpVelocity - (10 * timeSinceJump);
             }
             else if (timeSinceJump > 0.5f && timeSinceJump < 0.9f)
             {
-                verticalVelocity = -(float)(4 * (timeSinceJump - 0.5));
+                verticalVelocity = -(float)(10 * (timeSinceJump - 0.5));
             }
             else
             {
@@ -97,12 +102,14 @@ public class surferController : MonoBehaviour
     {
         if (other.gameObject.tag == "asteroid")
         {
+            asteroidDestroySound.Play();
             Destroy(other.gameObject);
             GameController.playerHealth -= 20;
         }
 
         if (other.gameObject.tag == "boost")
         {
+            boostSound.Play();
             Destroy(other.gameObject);
             GameController.forwardVelocityBooster = 2.0f;
             GameController.boostMode = true;
@@ -111,6 +118,7 @@ public class surferController : MonoBehaviour
 
         if (other.gameObject.tag == "ripple")
         {
+            groundRumbleSound.Play();
             GameController.forwardVelocityBooster = 0.5f;
             StartCoroutine(StopSlowdown());
         }

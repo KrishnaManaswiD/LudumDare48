@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class GameController : MonoBehaviour
     private Vector3 playerStartingPosition = new Vector3(0, 1.01f, 0);
 
     public GameObject blackhole;
+    public GameObject bkg;
+
+    public Text scoreText;
+    public Text healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +53,16 @@ public class GameController : MonoBehaviour
         }
 
         // spawn blackhole
-        blackhole = Instantiate(blackhole); // not good code
+        //blackhole = Instantiate(blackhole); // not good code
         //blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition);
-        blackhole.transform.position = player.transform.position + new Vector3(0,0,100f);
+        //blackhole.transform.position = player.transform.position + new Vector3(0,0,100f);
 
+        bkg = Instantiate(bkg); // not good code
+        bkg.transform.position = player.transform.position + new Vector3(0, 0, 120f);
+        bkg.transform.localScale = new Vector3(45, 1, 25);
+
+        scoreText.text = "Score: 0";
+        healthText.text = "Health: 100";
     }
 
     // Update is called once per frame
@@ -66,7 +77,8 @@ public class GameController : MonoBehaviour
             SpawnAsteroid(randomNumber);
             SpawnRipple(randomNumber);
             SpawnBoost(randomNumber);
-            blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition + 50);
+            //blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition + 50);
+            bkg.transform.position = new Vector3(0, 0, roadSpawnPosition + 60);
         }
 
         // update time spent
@@ -81,6 +93,9 @@ public class GameController : MonoBehaviour
         {
             HandleGameOver();
         }
+
+        scoreText.text = "Score: " + Mathf.Floor(timeSpent*13).ToString();
+        healthText.text = "Health: " + playerHealth.ToString();
     }
 
     private void SpawnRoad()
@@ -110,7 +125,7 @@ public class GameController : MonoBehaviour
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newBoost;
             newBoost = Instantiate(boost) as GameObject;
-            newBoost.transform.position = new Vector3(randomPosition, 1f, roadSpawnPosition);
+            newBoost.transform.position = new Vector3(randomPosition, 0f, roadSpawnPosition);
         }
     }
 
