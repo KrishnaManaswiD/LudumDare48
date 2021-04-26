@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
 
         bkg = Instantiate(bkg); // not good code
         bkg.transform.position = player.transform.position + new Vector3(0, 0, 120f);
+        bkg.transform.localScale = new Vector3(45, 1, 25);
     }
 
     // Update is called once per frame
