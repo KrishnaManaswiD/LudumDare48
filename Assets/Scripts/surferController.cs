@@ -20,6 +20,11 @@ public class surferController : MonoBehaviour
 
     public GameObject bullet;
 
+    public AudioSource asteroidDestroySound;
+    public AudioSource jumpSound;
+    public AudioSource groundRumbleSound;
+    public AudioSource boostSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +61,7 @@ public class surferController : MonoBehaviour
         {
             jumpLock = true;
             StartCoroutine(LandBack());
+            jumpSound.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -97,12 +103,14 @@ public class surferController : MonoBehaviour
     {
         if (other.gameObject.tag == "asteroid")
         {
+            asteroidDestroySound.Play();
             Destroy(other.gameObject);
             GameController.playerHealth -= 20;
         }
 
         if (other.gameObject.tag == "boost")
         {
+            boostSound.Play();
             Destroy(other.gameObject);
             GameController.forwardVelocityBooster = 2.0f;
             GameController.boostMode = true;
@@ -111,6 +119,7 @@ public class surferController : MonoBehaviour
 
         if (other.gameObject.tag == "ripple")
         {
+            groundRumbleSound.Play();
             GameController.forwardVelocityBooster = 0.5f;
             StartCoroutine(StopSlowdown());
         }
