@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class GameController : MonoBehaviour
     public GameObject blackhole;
     public GameObject bkg;
 
+    public Text scoreText;
+    public Text healthText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +60,9 @@ public class GameController : MonoBehaviour
         bkg = Instantiate(bkg); // not good code
         bkg.transform.position = player.transform.position + new Vector3(0, 0, 120f);
         bkg.transform.localScale = new Vector3(45, 1, 25);
+
+        scoreText.text = "Score: 0";
+        healthText.text = "Health: 100";
     }
 
     // Update is called once per frame
@@ -86,6 +93,9 @@ public class GameController : MonoBehaviour
         {
             HandleGameOver();
         }
+
+        scoreText.text = "Score: " + Mathf.Floor(timeSpent*13).ToString();
+        healthText.text = "Health: " + playerHealth.ToString();
     }
 
     private void SpawnRoad()
