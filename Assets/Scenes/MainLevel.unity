@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf27b8b2e9854747ae406838ae1276c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  road: {fileID: 4142352048865522228, guid: 7f6a2bd989e49754290e67e65652ef8f, type: 3}
+  road: {fileID: 951368648097298364, guid: 6f39fc9e5e6886a4692430af640bd250, type: 3}
   ripple: {fileID: 7461620409949669430, guid: 0e4c51b46a3c29749866b2f0c9fd6301, type: 3}
   asteroid: {fileID: 1127069329799536057, guid: 8cbfca4b5bca3f24ba3f7ae1c54c5d41, type: 3}
   asteroidsList:
