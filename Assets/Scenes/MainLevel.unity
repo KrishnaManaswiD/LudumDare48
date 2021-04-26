@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 3107132946837474836, guid: 503ac558fbf094a4489acf1873e4f5b9, type: 3}
   - {fileID: 4389580289974028064, guid: 7dbaf906d3ee4e0449c38c56dececd31, type: 3}
   boost: {fileID: 2179011448982260976, guid: f94aa01729584c64fa695a5099249a27, type: 3}
-  player: {fileID: 1437505116911153661, guid: 74509091fa599794e94bb95bdbe5f176, type: 3}
+  player: {fileID: 7605490681641546194, guid: af9c92f120174d84495771008634da80, type: 3}
   blackhole: {fileID: 306552983153418772, guid: 6a3e9b1f284a579429999719aae06a79, type: 3}
 --- !u!4 &59347350
 Transform:
