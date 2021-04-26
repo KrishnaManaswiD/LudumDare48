@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour
             float randomPosition = Random.Range(-5f, 5f);
             GameObject newBoost;
             newBoost = Instantiate(boost) as GameObject;
-            newBoost.transform.position = new Vector3(randomPosition, 1f, roadSpawnPosition);
+            newBoost.transform.position = new Vector3(randomPosition, 0f, roadSpawnPosition);
         }
     }
 

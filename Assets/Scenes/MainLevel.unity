@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 7849c289a50db154f99db319a6600156, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: e5fde53aceffda64c9145afe7670830c, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e7e80d2c06bda4b49a37fe349ac00df8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 1848387165182309925, guid: 53efdbf7eaf6dc1498632500f84e8958, type: 3}
   - {fileID: 3107132946837474836, guid: 503ac558fbf094a4489acf1873e4f5b9, type: 3}
   - {fileID: 4389580289974028064, guid: 7dbaf906d3ee4e0449c38c56dececd31, type: 3}
-  boost: {fileID: 2179011448982260976, guid: f94aa01729584c64fa695a5099249a27, type: 3}
+  boost: {fileID: 3460943108884463718, guid: b960c9295d08cee4298289d32bc4a6e8, type: 3}
   player: {fileID: 7605490681641546194, guid: af9c92f120174d84495771008634da80, type: 3}
   blackhole: {fileID: 306552983153418772, guid: 6a3e9b1f284a579429999719aae06a79, type: 3}
   bkg: {fileID: 1797545294781143398, guid: ab1f796eae4f9aa4581c762acc3b2589, type: 3}
@@ -448,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.14232147, y: -0, z: -0, w: 0.9898205}
-  m_LocalPosition: {x: 0, y: 3.63, z: -4.48}
+  m_LocalPosition: {x: 0, y: 4.72, z: -4.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2039936366}
