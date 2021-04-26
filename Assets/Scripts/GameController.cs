@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     private Vector3 playerStartingPosition = new Vector3(0, 1.01f, 0);
 
     public GameObject blackhole;
+    public GameObject bkg;
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +49,12 @@ public class GameController : MonoBehaviour
         }
 
         // spawn blackhole
-        blackhole = Instantiate(blackhole); // not good code
+        //blackhole = Instantiate(blackhole); // not good code
         //blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition);
-        blackhole.transform.position = player.transform.position + new Vector3(0,0,100f);
+        //blackhole.transform.position = player.transform.position + new Vector3(0,0,100f);
 
+        bkg = Instantiate(bkg); // not good code
+        bkg.transform.position = player.transform.position + new Vector3(0, 0, 120f);
     }
 
     // Update is called once per frame
@@ -66,7 +69,8 @@ public class GameController : MonoBehaviour
             SpawnAsteroid(randomNumber);
             SpawnRipple(randomNumber);
             SpawnBoost(randomNumber);
-            blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition + 50);
+            //blackhole.transform.position = new Vector3(0, 0, roadSpawnPosition + 50);
+            bkg.transform.position = new Vector3(0, 0, roadSpawnPosition + 60);
         }
 
         // update time spent

@@ -163,6 +163,7 @@ MonoBehaviour:
   boost: {fileID: 2179011448982260976, guid: f94aa01729584c64fa695a5099249a27, type: 3}
   player: {fileID: 7605490681641546194, guid: af9c92f120174d84495771008634da80, type: 3}
   blackhole: {fileID: 306552983153418772, guid: 6a3e9b1f284a579429999719aae06a79, type: 3}
+  bkg: {fileID: 1797545294781143398, guid: ab1f796eae4f9aa4581c762acc3b2589, type: 3}
 --- !u!4 &59347350
 Transform:
   m_ObjectHideFlags: 0
