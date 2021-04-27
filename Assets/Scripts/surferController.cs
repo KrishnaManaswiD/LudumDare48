@@ -10,7 +10,7 @@ public class surferController : MonoBehaviour
     private float angularVelocityAboutForward = 0.0f;
     private float angularVelocityAboutVertical = 0.0f;
 
-    private float initialJumpVelocity = 5.0f;
+    private float initialJumpVelocity = 6.0f;
     private float timeSinceJump = 0.0f;
 
     private int  currentLaneNumber = 3; // 1, 2, 3, 4, 5
@@ -76,11 +76,11 @@ public class surferController : MonoBehaviour
 
             if (timeSinceJump <= 0.5f)
             {
-                verticalVelocity = initialJumpVelocity - (10 * timeSinceJump);
+                verticalVelocity = initialJumpVelocity - (12 * timeSinceJump);
             }
             else if (timeSinceJump > 0.5f && timeSinceJump < 0.9f)
             {
-                verticalVelocity = -(float)(10 * (timeSinceJump - 0.5));
+                verticalVelocity = -(float)(12 * (timeSinceJump - 0.5));
             }
             else
             {
